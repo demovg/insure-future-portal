@@ -1,11 +1,12 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
@@ -35,10 +36,10 @@ export const Header = () => {
             >
               Contact
             </Link>
-            <Button variant="outline" className="mr-2">
+            <Button variant="outline" className="mr-2" onClick={() => navigate('/login')}>
               Login
             </Button>
-            <Button>Sign Up</Button>
+            <Button onClick={() => navigate('/signup')}>Sign Up</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -77,10 +78,25 @@ export const Header = () => {
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 px-4">
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => {
+                    navigate('/login');
+                    setIsMenuOpen(false);
+                  }}
+                >
                   Login
                 </Button>
-                <Button className="w-full">Sign Up</Button>
+                <Button 
+                  className="w-full"
+                  onClick={() => {
+                    navigate('/signup');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Sign Up
+                </Button>
               </div>
             </div>
           </nav>
