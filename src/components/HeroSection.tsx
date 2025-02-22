@@ -3,12 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
   return (
-    <div 
-      className="relative min-h-screen pt-16 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(240, 247, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/placeholder.svg')`
-      }}
-    >
+    <div className="relative min-h-screen pt-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between pt-12 lg:pt-24">
           <div className="lg:w-1/2 animate-fade-up">
