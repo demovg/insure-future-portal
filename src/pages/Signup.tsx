@@ -12,12 +12,18 @@ const Signup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Signup attempt with:", { email });
+    
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
+      toast.error("Passwords do not match", {
+        duration: 3000,
+      });
       return;
     }
-    // This is where we would handle signup logic
-    toast.info("Signup functionality will be implemented soon");
+    
+    toast.info("Signup functionality will be implemented soon", {
+      duration: 3000,
+    });
   };
 
   return (

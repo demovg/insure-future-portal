@@ -11,8 +11,10 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This is where we would handle login logic
-    toast.info("Login functionality will be implemented soon");
+    console.log("Login attempt with:", { email });
+    toast.info("Login functionality will be implemented soon", {
+      duration: 3000,
+    });
   };
 
   return (
